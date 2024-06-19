@@ -318,6 +318,7 @@ void PB2CNF::encode(const PBConstraint& pbconstraint, PBSATSolver& satsolver, Au
 
 void PB2CNF::encode(const PBConstraint& pbconstraint, ClauseDatabase& formula, AuxVarManager& auxVars)
 {
+  cout << "encode() function" << endl;
   SimplePBConstraint constraint = pre_encoder.preEncodePBConstraint(pbconstraint, formula);
 
   if (config->just_approximate)
@@ -347,6 +348,8 @@ void PB2CNF::encode(const PBConstraint& pbconstraint, ClauseDatabase& formula, A
 	  }
   }
 
+  cout << "constraint type: " << constraint.getType() << endl;
+
   switch(constraint.getType())
   {
     case DONTCARE:
@@ -358,6 +361,7 @@ void PB2CNF::encode(const PBConstraint& pbconstraint, ClauseDatabase& formula, A
       encode_amk(constraint, formula, auxVars);
       break;
     case PB:
+      cout << "c [pblib] encoding PB constraint" << endl;
       encode_pb(constraint, formula, auxVars);
       break;
     default:
@@ -450,6 +454,7 @@ void PB2CNF::encode_with_binary_merge(SimplePBConstraint& constraint, ClauseData
 
 void PB2CNF::encode_pb(SimplePBConstraint& constraint, ClauseDatabase& formula, AuxVarManager& auxVars)
 {
+  cout << config->pb_encoder << endl;
   if(config->pb_encoder == PB_ENCODER::SORTINGNETWORKS)
   {
     sorting_networks.encode(constraint, formula, auxVars);
@@ -464,6 +469,7 @@ void PB2CNF::encode_pb(SimplePBConstraint& constraint, ClauseDatabase& formula, 
   else
   if(config->pb_encoder == PB_ENCODER::BDD)
   {
+    cout << "BDD encoding" << endl;
     encode_with_bdd(constraint, formula, auxVars);
     return;
   }

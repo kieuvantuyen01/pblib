@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/fuzzer.dir/cli/fuzzer.cpp.o CMakeFiles/fuzzer.dir/cli/BasicSATSolver.cc.o CMakeFiles/fuzzer.dir/cli/SATSolverClauseDatabase.cpp.o -o fuzzer  cli/minisat/libminisat.a libpb.a 

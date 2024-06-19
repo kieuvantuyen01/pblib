@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/pbencoder.dir/cli/pbencoder.cpp.o -o pbencoder  libpb.a 

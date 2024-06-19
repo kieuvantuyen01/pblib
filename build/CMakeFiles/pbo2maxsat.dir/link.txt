@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/pbo2maxsat.dir/cli/pbo2maxsat.cpp.o -o pbo2maxsat  libpb.a 

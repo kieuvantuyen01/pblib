@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/pbsolver.dir/cli/pbsolver.cpp.o CMakeFiles/pbsolver.dir/cli/BasicSATSolver.cc.o CMakeFiles/pbsolver.dir/cli/SATSolverClauseDatabase.cpp.o -o pbsolver  cli/minisat/libminisat.a libpb.a 
